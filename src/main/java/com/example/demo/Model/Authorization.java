@@ -6,18 +6,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Authorization {
+public class Authorization{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String login;
     private String password;
 
-    public Authorization() {
+    public Authorization () {
     }
 
-    public Authorization(Long id, String login, String password) {
+    public Authorization (Long id, String login, String password) {
         this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    public Authorization(String login, String password) {
         this.login = login;
         this.password = password;
     }
